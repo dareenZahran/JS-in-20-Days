@@ -36,3 +36,95 @@ Objects are used to represent complex data structures in JavaScript. Here are th
 -The(` Object.freeze()`) method can be used to make an object immutable, preventing any modifications to its properties or the addition of new properties.
 
 ## Example from course
+```javascript
+//exercise1
+const myName="Dareen";// this canot be change
+let compinedAgeOfParents=40+50// we can change it
+let board= document.querySelector("#board");
+//exercise 2 
+let array1=[1,2,3]
+let array2=[6,4,5]
+array2.sort();//4,5,6
+ array1.join("&")//1&2&3
+ array1.concat(4)//[1,2,3,4]this dont make a change on the array but it will create new array
+ console.log(array1)//[1,2,3]
+ array1.push(4)//[1,2,3,4]
+ console.log(array1)//[1,2,3,4]
+
+ // the array is mutable we can make change on it 
+ const array3=['a','b','c']
+ array3[0]='d'//we can do it (the cahnge on the element inside the array)array is mutable
+ array3=[1,2]// we canot make this because its const 
+ // exercise for object 
+
+ let obj = {name:"dareen",
+            age:20 , 
+            speake:function(){console.log("my name is dareen")}}
+
+            console.log(obj.name);//dareen
+            console.log(obj.speake)//my name is dareen
+```
+## Exercise
+### [Profile Lookup](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup)
+```javascript
+const contacts = [
+    {
+      firstName: "Akira",
+      lastName: "Laine",
+      number: "0543236543",
+      likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+      firstName: "Harry",
+      lastName: "Potter",
+      number: "0994372684",
+      likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+      firstName: "Sherlock",
+      lastName: "Holmes",
+      number: "0487345643",
+      likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+      firstName: "Kristian",
+      lastName: "Vos",
+      number: "unknown",
+      likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+  ];
+  
+  function lookUpProfile(name, prop) {
+    for(let i=0 ; i<=contacts.length;i++){
+      if( contacts[i].firstName==name){
+          if(contacts[i][prop]!=undefined){
+              return contacts[i][prop]
+          }
+         
+      }
+     
+    }
+    return"no such property"
+    }
+  
+  lookUpProfile("Akira", "likes");
+```
+### [Copy Array Items Using slice()](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/copy-array-items-using-slice)
+```javascript
+function forecast(arr) {
+  return arr.slice(2, 4);
+}
+
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'])); 
+// ['warm', 'sunny']
+```
+### [Combine Arrays with the Spread Operator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-data-structures/combine-arrays-with-the-spread-operator)
+```javascript
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning',...fragment,'is','fun'];
+  return sentence;
+}
+
+console.log(spreadOut());
+```
